@@ -1,0 +1,52 @@
+a {
+  text-decoration: none;
+  color: gray;
+  transition: 0.5s;
+  &:hover {
+    color: green;
+  }
+}
+// body {
+// 	@extend html;
+// 	font: {
+// 		size: $FONT_Z_NORMAL - 3;
+// 		family:  $fontFamilyMain;
+// 	}
+// 	color:$fontColor;
+// }
+// li {
+// 	list-style: none;
+// }
+li {
+  list-style: none;
+}
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em;
+  overflow-x: hidden;
+}
+
+body {
+  @extend html;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: 1.1em;
+}
+p {
+  // margin:1em 0 0 0;
+  line-height: 1.6em;
+  text-align: justify;
+}
+span {
+  display: inline-block;
+}

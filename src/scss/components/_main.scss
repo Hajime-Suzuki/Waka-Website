@@ -1,0 +1,19 @@
+@import './var.scss';
+
+.container {
+  margin: 0;
+  padding: 6vh 10%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.bg-purple {
+  background-color: $BG_purple;
+}
+
+.dots {
+  $width: 50px;
+  width: $width;
+  height: $width;
+  fill: $MAINCOLOR_gray1;
+}
