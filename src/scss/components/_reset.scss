@@ -1,3 +1,4 @@
+@import './var';
 a {
   text-decoration: none;
   color: gray;
@@ -27,6 +28,7 @@ html {
   padding: 0;
   line-height: 1.5em;
   overflow-x: hidden;
+  color: $FONT_COLOR;
 }
 
 body {
@@ -40,10 +42,23 @@ h4,
 h5,
 h6 {
   margin: 0;
-  line-height: 1.1em;
+  line-height: 1em;
+}
+
+h1 {
+  font-size: $FONT_SIZE_H1;
+}
+h2 {
+  font-size: $FONT_SIZE_H2;
+}
+h3 {
+  font-size: $FONT_SIZE_H3;
+}
+h4 {
+  font-size: $FONT_SIZE_H4;
 }
 p {
-  // margin:1em 0 0 0;
+  font-size: $FONT_SIZE_BODY;
   line-height: 1.6em;
   text-align: justify;
 }

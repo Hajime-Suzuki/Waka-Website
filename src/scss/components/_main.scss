@@ -1,19 +1,62 @@
-@import './var.scss';
-
 .container {
   margin: 0;
-  padding: 6vh 10%;
+  padding: $MARGIN_VALUE 10% 15px;
   box-sizing: border-box;
   text-align: center;
+  position: relative;
+  background-color: $BG_white;
 }
 
 .bg-purple {
   background-color: $BG_purple;
 }
-
-.dots {
-  $width: 50px;
+svg {
+  $width: 40px;
   width: $width;
   height: $width;
   fill: $MAINCOLOR_gray1;
+}
+.dots {
+  $width: 60px;
+  width: $width;
+  height: 10px;
+}
+
+.dots-white {
+  fill: rgb(231, 231, 231);
+}
+
+.indication {
+  margin-bottom: $MARGIN_VALUE;
+  p {
+    font-family: $H_FONT;
+    letter-spacing: 0.5em;
+    margin: 0;
+    font-size: 80%;
+    color: $MAINCOLOR_gray2;
+    text-shadow: 2px 2px 2px rgb(210, 210, 210);
+  }
+
+  &.indication-bottom {
+    margin-bottom: 0;
+    margin-top: $MARGIN_VALUE;
+    p {
+      position: relative;
+      // top: $MARGIN_VALUE/1.5;
+      text-align: center;
+    }
+  }
+}
+
+.bio-line {
+  margin: $MARGIN_VALUE 0;
+  p {
+    &:nth-of-type(1):first-letter {
+      font-size: $FONT_SIZE_H2;
+      color: $MAINCOLOR_green2;
+    }
+    &.first-white:nth-of-type(1):first-letter {
+      color: rgb(226, 255, 239);
+    }
+  }
 }

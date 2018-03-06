@@ -1,10 +1,11 @@
 <template lang='pug'>
   .app
-    top
-    about
-    photos
-    videos
-    contact
+    navbar
+    top#top
+    about#about
+    photos#photos
+    videos#videos
+    contact#contact
 </template>
 
 
@@ -14,6 +15,7 @@ import about from './components/about'
 import photos from './components/photos'
 import videos from './components/videos'
 import contact from './components/contact'
+import navbar from './components/menu'
 
 export default {
   components: {
@@ -21,7 +23,8 @@ export default {
     about,
     photos,
     videos,
-    contact
+    contact,
+    navbar
   },
   data() {
     return {}

@@ -3,7 +3,8 @@ import App from './App.vue'
 
 import store from './store/store'
 
-import dots from './svg/dots.svg'
+import './svg/dots.svg'
+import './svg/facebook.svg'
 
 new Vue({
   el: '#app',
