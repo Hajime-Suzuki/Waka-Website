@@ -14,10 +14,14 @@
     .contact-info
       h1 WAKA
       p.singer Jazz Singer
-      a(href='https://www.facebook.com/WAKASOUND/')
-        svg.facebook
-          use(xlink:href='#facebook')
-      p mail@mail.com
+      .icons
+        a(href='https://www.facebook.com/WAKASOUND/')
+          svg.facebook
+            use(xlink:href='#facebook')
+        a(href='https://www.instagram.com/waka.sound/')
+          svg.facebook
+            use(xlink:href='#instagram')
+      p wakasound@gmail.com
     .indication.indication-bottom
       p -4-
 </template>
@@ -35,8 +39,24 @@ p {
 
 .contact-info {
   margin-top: $MARGIN_VALUE;
-  $width: 30px;
 
+  h1 {
+    color: $MAINCOLOR_white1;
+    font-size: $FONT_SIZE_H1 * 1.3;
+    font-family: $H_FONT;
+    letter-spacing: 0.2em;
+  }
+  p {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.icons {
+  $width: 30px;
+  display: flex;
+  width: 100px;
+  margin: auto;
   a {
     display: block;
     width: $width;
@@ -47,17 +67,6 @@ p {
     width: $width;
     height: $width;
     fill: lighten($MAINCOLOR_gray1, 50%);
-  }
-  h1 {
-    color: $MAINCOLOR_white1;
-    font-size: $FONT_SIZE_H1 * 1.3;
-    font-family: $H_FONT;
-  }
-  p {
-    margin: 0;
-    text-align: center;
-  }
-  .singer {
   }
 }
 </style>

@@ -1,24 +1,13 @@
 <template lang='pug'>
   .menu(:class='{isActive : menuActive}')
-    .open(@click='open' :class='{isActive : menuActive}')
+    .open(@click='open'  @closeImg='test' :class='{isActive : menuActive}')
       li
       li
       li
-
     .menu-items(:class='{isActive : menuActive}')
+      h3 -CHAPTERS-
       .item(v-for='item in menuItems')
-        li
-          a(:href='item.link') {{item.name}}
-      //- li
-      //-   a(href='#top') Top
-      //- li
-      //-   a(href='#about') About
-      //- li
-      //-   a(href='#photos') Photos
-      //- li
-      //-   a(href='#videos') Videos
-      //- li
-      //-   a(href='#contact') Contact
+        li(v-scroll-to="item.link" @click='clickMenu(item.link)') {{item.name}}
 </template>
 
 <script>
@@ -36,8 +25,17 @@ export default {
     }
   },
   methods: {
+    test() {
+      console.log(':;adfadfadfa')
+    },
     open() {
       this.menuActive = !this.menuActive
+    },
+    clickMenu(position) {
+      this.menuActive = false
+      if (this.$route.name === 'gallery') {
+        this.$router.push({ name: 'main', params: { position } })
+      }
     }
   }
 }
@@ -53,7 +51,7 @@ $speed: 0.5s;
   height: 100vh;
   top: 0;
   right: - $menubar_size - 50px;
-  z-index: 9999;
+  z-index: 999;
   background-color: $MAINCOLOR_green1;
   transition: $speed;
   box-shadow: 0px -20px 20px rgb(126, 126, 126);
@@ -96,15 +94,22 @@ $speed: 0.5s;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  li {
+
+  %item {
     text-align: center;
     font-size: $FONT_SIZE_H4;
     letter-spacing: 0.1em;
     margin: 20px;
+    color: $MAINCOLOR_gray3;
+  }
+  li {
+    @extend %item;
   }
 
-  a {
-    color: $MAINCOLOR_gray3;
+  h3 {
+    @extend %item;
+    letter-spacing: 0.3em;
+    color: lighten($MAINCOLOR_gray3, 25%);
   }
 }
 </style>

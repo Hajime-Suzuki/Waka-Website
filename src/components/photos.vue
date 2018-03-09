@@ -14,7 +14,8 @@
       img(src='../img/photo1.jpg')
       img(src='../img/photo2.jpg')
       img(src='../img/photo3.jpg')
-    a.button(href='gallery.html') More
+    router-link(:to="{ name: 'gallery'}" tag='a' class='button')
+      | More
     .indication.indication-bottom
       p -2-
 </template>

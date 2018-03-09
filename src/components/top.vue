@@ -1,10 +1,14 @@
 <template lang='pug'>
-  .container.h100
-    h1 WAKA
+  .top
+    navbar
+    .container.h100
 </template>
 
 <script>
-export default {}
+import navbar from './menu.vue'
+export default {
+  components: { navbar }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -14,9 +18,9 @@ export default {}
   width: 100%;
 }
 .container {
-  background-image: url('../img/top.jpg');
+  background-image: url('../img/top-mobile.jpg');
   background-size: cover;
-  background-position: 85%;
+  background-position: center;
 }
 h1 {
   color: rgb(231, 231, 231);

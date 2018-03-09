@@ -1,11 +1,8 @@
 <template lang='pug'>
-  .app
-    navbar
-    top#top
-    about#about
-    photos#photos
-    videos#videos
-    contact#contact
+    .app
+      //- navbar
+      transition(name='fade')
+        router-view
 </template>
 
 
@@ -23,13 +20,32 @@ export default {
     about,
     photos,
     videos,
-    contact,
-    navbar
+    contact
+    // navbar
   },
   data() {
-    return {}
-  },
-  methods: {}
+    return {
+      timeout: null
+    }
+  }
+  // created() {
+  //   window.addEventListener('scroll', this.scroll)
+  // },
+  // destroyed() {
+  //   window.removeEventListener('scroll', this.scroll)
+  // },
+  // methods: {
+  //   scroll() {
+  //     if (this.timeout) return
+  //     this.timeout = setTimeout(() => {
+  //       console.log('testetaes')
+  //       this.timeout = null
+  //     }, 100)
+  //   },
+  //   clickMenu() {
+  //     window.scrollTo(0, window.innerHeight)
+  //   }
+  // }
 }
 </script>
 
@@ -41,5 +57,14 @@ export default {
 .app {
   font-family: $P_FONT;
   width: 100%;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s ease-in-out;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
