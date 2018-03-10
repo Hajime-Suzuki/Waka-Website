@@ -8,6 +8,7 @@
     //-       img.grid-item.pswp__item(v-for='num in 27' :src='"../img/gallery/1500/1500 (" + num + ").jpg"')
     .grid(ref='grid')
       img.grid-item(v-for='num in 27' :src='"../img/gallery/1500/1500 (" + num + ").jpg"' @click='clickImg')
+    //- .button(@click='toTop') Back
 </template>
 
 <script>
@@ -32,11 +33,9 @@ export default {
     return {
       lightBoxInstance: [],
       createHTML: e => {
-        console.log(e.target.eventParam.src)
         const html = `<img src="${e.target.eventParam.src}">`
         this.lightBoxInstance.push(basicLightbox.create(html))
         basicLightbox.create(html).show()
-        // console.log(this.lightBoxInstance)
       }
     }
   },
@@ -66,27 +65,36 @@ export default {
       console.log('close')
       this.$emit('closeImg')
     }
+    // toTop() {
+    //   this.$router.push({ name: 'main', params: { position: '#photos' } })
+    // }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../scss/components/var';
+@import '../scss/components/mixin';
 
 h1 {
   color: $MAINCOLOR_gray3;
   text-align: center;
+  font-family: $H_FONT;
 }
 
 .gallery {
   min-height: 100vh;
+  padding-bottom: $MARGIN_VALUE;
 }
 .grid {
-  margin: 0 auto;
+  margin: $MARGIN_VALUE auto 0;
 }
 .grid-item {
-  width: 30%;
-  min-width: 150px;
+  width: 100%;
   margin-bottom: 10px;
+  @include tablet() {
+    width: 48%;
+    margin-bottom: 10px;
+  }
 }
 </style>

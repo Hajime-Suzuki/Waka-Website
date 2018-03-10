@@ -1,3 +1,5 @@
+@import './mixin.scss';
+
 $P_FONT: 'Titillium Web';
 $H_FONT: 'Federo';
 
@@ -6,6 +8,8 @@ $FONT_SIZE_H1: 36px;
 $FONT_SIZE_H2: 32px;
 $FONT_SIZE_H3: 26px;
 $FONT_SIZE-H4: 18px;
+
+$FONT_SIZE_BODY_TAB: 17px;
 
 $MAINCOLOR_gray1: #cccccc;
 $MAINCOLOR_gray2: #b3b3b3;
@@ -21,3 +25,9 @@ $MAINCOLOR_green1: #b7c0ab;
 $MAINCOLOR_green2: #69735b;
 
 $MARGIN_VALUE: 8vh;
+$MARGIN_VALUE_SIDE: 15vw;
+
+$MARGIN_VALUE_PC: 100px;
+$MARGIN_VALUE_SIDE_PC: 20vw;
+
+$MAX_WIDTH_PC: 800px;

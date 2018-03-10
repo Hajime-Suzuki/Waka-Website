@@ -39,6 +39,7 @@ p {
 
 .contact-info {
   margin-top: $MARGIN_VALUE;
+  margin-top: $MARGIN_VALUE_PC;
 
   h1 {
     color: $MAINCOLOR_white1;

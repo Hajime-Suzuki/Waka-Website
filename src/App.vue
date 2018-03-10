@@ -12,7 +12,7 @@ import about from './components/about'
 import photos from './components/photos'
 import videos from './components/videos'
 import contact from './components/contact'
-import navbar from './components/menu'
+// import navbar from './components/menu'
 
 export default {
   components: {
@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      timeout: null
+      // timeout: null
     }
   }
   // created() {
@@ -57,11 +57,12 @@ export default {
 .app {
   font-family: $P_FONT;
   width: 100%;
+  position: absolute;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 .fade-enter,
 .fade-leave-to {

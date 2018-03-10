@@ -43,6 +43,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../scss/components/var';
+@import '../scss/components/mixin';
 $menubar_size: 250px;
 $speed: 0.5s;
 .menu {
@@ -64,10 +65,16 @@ $speed: 0.5s;
   height: $size;
   width: $size;
   padding: 2px;
-  position: fixed;
-  top: 0;
-  right: 0;
+  $pos: 5px;
+  @include pos(f,t, $pos);
+  right: $pos;
   transition: $speed - 0.2;
+
+  @include tablet() {
+    $pos: 15px;
+    top: $pos;
+    right: $pos;
+  }
 
   li {
     margin: 6px;

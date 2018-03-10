@@ -25,5 +25,12 @@ export default {}
 img {
   margin-top: $MARGIN_VALUE;
   width: 100%;
+  @include desktop_s() {
+    // width: calc(100% - #{$MARGIN_VALUE_SIDE_PC} *2);
+    // width: 100%;
+    max-width: $MAX_WIDTH_PC;
+    display: block;
+    margin: $MARGIN_VALUE_PC auto;
+  }
 }
 </style>

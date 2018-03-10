@@ -1,4 +1,5 @@
 @import './var';
+@import './mixin.scss';
 a {
   text-decoration: none;
   color: gray;
@@ -59,6 +60,9 @@ h4 {
 }
 p {
   font-size: $FONT_SIZE_BODY;
+  @include tablet() {
+    font-size: $FONT_SIZE_BODY_TAB;
+  }
   line-height: 1.6em;
   text-align: justify;
 }

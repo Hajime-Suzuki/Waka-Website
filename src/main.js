@@ -29,11 +29,17 @@ const router = new VueRouter({
   ],
   mode: 'history',
   scrollBehavior(to, from, savedPosition) {
-    if (to.params.position) return { selector: to.params.position }
-    // if (savedPosition) return savedPosition
-    // else {
-    //   if(to.hash)
-    // }
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        let position
+
+        if (to.params.position) position = { selector: to.params.position }
+        else if (savedPosition) position = savedPosition
+        else position = { x: 0, y: 0 }
+
+        resolve(position)
+      }, 1000)
+    })
   }
 })
 

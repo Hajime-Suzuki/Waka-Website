@@ -26,16 +26,28 @@ export default {}
 
 <style lang="scss" scoped>
 @import '../scss/components/var';
+@import '../scss/components/mixin';
 
 p {
   color: $MAINCOLOR_white1;
 }
 .img-container {
   margin-top: $MARGIN_VALUE;
+  @include desktop_s() {
+    @include flex();
+    margin-top: $MARGIN_VALUE_PC;
+  }
   & img {
     width: 100%;
     &:nth-of-type(n + 2) {
       margin-top: $MARGIN_VALUE/2;
+    }
+
+    @include desktop_s() {
+      width: 33.3%;
+      &:nth-of-type(n + 2) {
+        margin: 0 5px;
+      }
     }
   }
 }

@@ -1,0 +1,141 @@
+@mixin pos($fixOrAbs, $pos, $value:0) {
+  @if $fixOrAbs=='a' {
+    $fixOrAbs: absolute;
+  } @else if $fixOrAbs=='f' {
+    $fixOrAbs: fixed;
+  }
+  position: $fixOrAbs;
+  @if $pos=='t' {
+    top: $value;
+  } @else if $pos=='r' {
+    right: $value;
+  } @else if $pos=='b' {
+    bottom: $value;
+  } @else if $pos=='l' {
+    left: $value;
+  }
+}
+
+@mixin Acenter() {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+}
+
+@mixin flex($direction:row, $justify:center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: center;
+}
+
+@mixin boxShadow($X:5px, $Y:5px, $blur:5px, $color:rgba(0, 0, 0, 0.1)) {
+  box-shadow: $X $Y $blur 0 $color;
+}
+
+@mixin nav_Footer_boxshadow($Y:10px) {
+  @include boxShadow(0, $Y, 5px, rgba(0, 0, 0, 0.1));
+}
+
+@mixin rotate($deg, $duration, $delay:0s, $timing:ease) {
+  transform: rotate($deg);
+  @include trans($duration, $delay, $timing);
+}
+
+@mixin trans($duration, $delay:0s, $timing:ease) {
+  transition: $duration $timing $delay;
+}
+
+@mixin beforeAfter($position:absolute) {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: $position;
+}
+
+$desktop-breakpoint_s: 960px;
+$desktop-breakpoint_m: 1280px;
+$tablet-breakpoint: 600px;
+@mixin desktop_s() {
+  @media screen and (min-width: $desktop-breakpoint_s) {
+    @content;
+  }
+}
+@mixin desktop_m() {
+  @media screen and (min-width: $desktop-breakpoint_m) {
+    @content;
+  }
+}
+@mixin phone() {
+  @media screen and (max-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin button($marginTop:0, $W:100px, $adjust:5) {
+  $height: 40px;
+  display: block;
+  width: $W;
+  margin: $marginTop auto 0 auto;
+  height: $height;
+  line-height: $height;
+  color: white;
+  text-align: center;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@mixin ripple() {
+  &:before {
+    $w_h: 25px;
+    content: '';
+    width: $w_h;
+    height: $w_h;
+    border-radius: 100%;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-color: rgba(232, 251, 255, 0.24);
+    animation: ripple 0.8s cubic-bezier(0, 0, 0, 0.97);
+    opacity: 0;
+  }
+}
+
+@mixin rippleAnimation() {
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(15);
+    }
+  }
+}
+
+@mixin triangle() {
+  $size: 25px;
+  content: '';
+  width: $size;
+  height: $size;
+  @include Acenter();
+  top: inherit;
+  bottom: - $size / 2;
+  transform: rotate(45deg);
+  z-index: 10;
+}

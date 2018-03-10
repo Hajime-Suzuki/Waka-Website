@@ -1,10 +1,14 @@
 .container {
   margin: 0;
-  padding: $MARGIN_VALUE 10% 15px;
+  padding: $MARGIN_VALUE $MARGIN_VALUE_SIDE 15px;
   box-sizing: border-box;
   text-align: center;
   position: relative;
   background-color: $BG_white;
+
+  @include desktop_s() {
+    padding: $MARGIN_VALUE_PC $MARGIN_VALUE_SIDE_PC 15px;
+  }
 }
 
 .bg-purple {
@@ -28,6 +32,10 @@ svg {
 
 .indication {
   margin-bottom: $MARGIN_VALUE;
+  @include desktop_s() {
+    margin-bottom:: $MARGIN_VALUE_PC;
+  }
+
   p {
     font-family: $H_FONT;
     letter-spacing: 0.5em;
@@ -40,17 +48,29 @@ svg {
   &.indication-bottom {
     margin-bottom: 0;
     margin-top: $MARGIN_VALUE;
+    @include desktop_s() {
+      margin-top:: $MARGIN_VALUE_PC;
+    }
     p {
       position: relative;
       // top: $MARGIN_VALUE/1.5;
       text-align: center;
+      margin: 0px;
     }
   }
 }
 
 .bio-line {
-  margin: $MARGIN_VALUE 0;
+  margin: $MARGIN_VALUE auto;
+  @include desktop_s() {
+    margin: $MARGIN_VALUE_PC auto;
+    width: 100% - #{$MARGIN_VALUE_SIDE_PC};
+    max-width: $MAX_WIDTH_PC;
+  }
   p {
+    @include desktop_s() {
+      line-height: 1.8em
+    }
     &:nth-of-type(1):first-letter {
       font-size: $FONT_SIZE_H2;
       color: $MAINCOLOR_green2;
