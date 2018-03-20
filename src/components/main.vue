@@ -1,10 +1,10 @@
 <template lang='pug'>
-  .main
-    top#top
-    about#about
-    photos#photos
-    videos#videos
-    contact#contact
+    .main(@click='clickBody')
+      top#top
+      about#about
+      photos#photos
+      videos#videos
+      contact#contact
 </template>
 
 <script>
@@ -23,6 +23,14 @@ export default {
     videos,
     contact,
     navbar
+  },
+  methods: {
+    clickBody() {
+      this.$store.state.isMenuOpen = false
+    }
+  },
+  mounted() {
+    this.$store.state.isMenuOpen = false
   }
 }
 </script>

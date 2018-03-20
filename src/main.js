@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-import store from './store/store'
 import VueRouter from 'vue-router'
 import vueScrollto from 'vue-scrollto'
+import Vuex from 'vuex'
 
 import gallery from './components/gallery.vue'
 import main from './components/main.vue'
@@ -13,13 +13,15 @@ import './svg/instagram.svg'
 import './svg/instagram.svg'
 
 Vue.use(VueRouter)
-
-// import { VueMasonryPlugin } from 'vue-masonry'
-// Vue.use(VueMasonryPlugin)
+Vue.use(Vuex)
 
 Vue.use(vueScrollto, {
   duration: 1000,
   easing: 'ease-in-out'
+})
+
+const store = new Vuex.Store({
+  state: { isMenuOpen: false }
 })
 
 const router = new VueRouter({

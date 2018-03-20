@@ -1,16 +1,18 @@
 <template lang='pug'>
-  .menu(:class='{isActive : menuActive}')
-    .open(@click='open'  @closeImg='test' :class='{isActive : menuActive}')
+  .menu(:class='{isActive : $store.state.isMenuOpen}')
+    .open(@click='open' :class='{isActive : $store.state.isMenuOpen}')
       li
       li
       li
-    .menu-items(:class='{isActive : menuActive}')
+    .menu-items(:class='{isActive : $store.state.isMenuOpen}')
       h3 -CHAPTERS-
       .item(v-for='item in menuItems')
         li(v-scroll-to="item.link" @click='clickMenu(item.link)') {{item.name}}
 </template>
 
 <script>
+// import eventBus from '../main.js'
+
 export default {
   data() {
     return {
@@ -25,14 +27,11 @@ export default {
     }
   },
   methods: {
-    test() {
-      console.log(':;adfadfadfa')
-    },
     open() {
-      this.menuActive = !this.menuActive
+      this.$store.state.isMenuOpen = !this.$store.state.isMenuOpen
     },
     clickMenu(position) {
-      this.menuActive = false
+      this.$store.state.isMenuOpen = false
       if (this.$route.name === 'gallery') {
         this.$router.push({ name: 'main', params: { position } })
       }
@@ -76,12 +75,17 @@ $speed: 0.5s;
     right: $pos;
   }
 
+  &:hover li {
+    background-color: rgb(223, 223, 223);
+  }
+
   li {
     margin: 6px;
     height: 4px;
     background-color: rgb(182, 182, 182);
     transition: $speed;
   }
+
   &.isActive li {
     background-color: lighten($MAINCOLOR_gray1, 15%);
     &:nth-child(1) {
@@ -95,6 +99,9 @@ $speed: 0.5s;
       transform: translate(0px, -10px) rotate(45deg);
     }
   }
+  &.isActive:hover li {
+    background-color: lighten($MAINCOLOR_gray1, 80%);
+  }
 }
 .menu-items {
   height: 100vh;
@@ -106,10 +113,16 @@ $speed: 0.5s;
     text-align: center;
     font-size: $FONT_SIZE_H4;
     letter-spacing: 0.1em;
-    margin: 20px;
+    margin: 20px auto;
     color: $MAINCOLOR_gray3;
   }
   li {
+    width: 100px;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+      color: lighten($MAINCOLOR_gray3, 30%);
+    }
     @extend %item;
   }
 

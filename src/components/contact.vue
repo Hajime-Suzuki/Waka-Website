@@ -68,6 +68,10 @@ p {
     width: $width;
     height: $width;
     fill: lighten($MAINCOLOR_gray1, 50%);
+    transition: 0.5s;
+    &:hover {
+      fill: lighten($MAINCOLOR_gray1, 10%);
+    }
   }
 }
 </style>

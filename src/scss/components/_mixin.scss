@@ -70,7 +70,7 @@ $tablet-breakpoint: 600px;
   }
 }
 @mixin phone() {
-  @media screen and (max-width: $desktop-breakpoint) {
+  @media screen and (max-width: $desktop-breakpoint_s) {
     @content;
   }
 }

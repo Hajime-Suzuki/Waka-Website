@@ -61,5 +61,8 @@ p {
   color: $color;
   border: 2px solid $color;
   background-color: darken($BG_purple, 30%);
+  &:hover {
+    background-color: darken($BG_purple, 15%);
+  }
 }
 </style>

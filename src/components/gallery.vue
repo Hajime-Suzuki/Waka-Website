@@ -1,14 +1,8 @@
 <template lang='pug'>
-  .gallery.container
-    navbar
-    h1 Gallery
-    //- .grid(ref='grid' class="pswp")
-    //-   .pswp__scroll-wrap
-    //-     .pswp__container
-    //-       img.grid-item.pswp__item(v-for='num in 27' :src='"../img/gallery/1500/1500 (" + num + ").jpg"')
-    .grid(ref='grid')
-      img.grid-item(v-for='num in 27' :src='"../img/gallery/1500/1500 (" + num + ").jpg"' @click='clickImg')
-    //- .button(@click='toTop') Back
+    .gallery.container(@click='clickBody')
+      h1 Gallery
+      .grid(ref='grid')
+        img.grid-item(v-for='num in 27' :src='"../img/gallery/1500/1500 (" + num + ").jpg"')
 </template>
 
 <script>
@@ -18,12 +12,6 @@ import Masonry from 'masonry-layout'
 import imagesLoaded from 'imagesLoaded'
 import 'basicLightbox/dist/basicLightbox.min.css'
 import * as basicLightbox from 'basiclightbox'
-// import { VueMasonryPlugin } from 'vue-masonry'
-// Vue.use(VueMasonryPlugin)
-
-// import Vue from 'vue'
-// import { VueMasonryPlugin } from 'vue-masonry'
-// Vue.use(VueMasonryPlugin)
 
 export default {
   components: {
@@ -34,12 +22,14 @@ export default {
       lightBoxInstance: [],
       createHTML: e => {
         const html = `<img src="${e.target.eventParam.src}">`
-        this.lightBoxInstance.push(basicLightbox.create(html))
-        basicLightbox.create(html).show()
+        const instance = basicLightbox.create(html)
+        this.lightBoxInstance.push(instance)
+        instance.show()
       }
     }
   },
   mounted() {
+    this.$store.state.isMenuOpen = false
     let grid = document.querySelector('.grid')
 
     imagesLoaded(grid, function() {
@@ -49,25 +39,21 @@ export default {
         fitWidth: true
       })
     })
-
     document.querySelectorAll('.grid-item').forEach(item => {
       item.addEventListener('click', this.createHTML)
       item.eventParam = item
     })
   },
   destroyed() {
+    this.lightBoxInstance.forEach(v => v.close())
     document.querySelectorAll('.grid-item').forEach(item => {
       item.removeEventListener('click', this.createHTML)
     })
   },
   methods: {
-    clickImg() {
-      console.log('close')
-      this.$emit('closeImg')
+    clickBody() {
+      this.$store.state.isMenuOpen = false
     }
-    // toTop() {
-    //   this.$router.push({ name: 'main', params: { position: '#photos' } })
-    // }
   }
 }
 </script>
