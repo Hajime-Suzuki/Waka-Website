@@ -1,5 +1,5 @@
 const state = {
-  test: 'test!'
+  isMenuOpen: false
 }
 
 export default state

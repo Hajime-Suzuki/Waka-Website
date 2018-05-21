@@ -43,6 +43,9 @@ svg {
     font-size: 80%;
     color: $MAINCOLOR_gray2;
     text-shadow: 2px 2px 2px rgb(210, 210, 210);
+    @include desktop_s(){
+      font-size: 100%;
+    };
   }
 
   &.indication-bottom {

@@ -1,19 +1,24 @@
 <template lang='pug'>
   .top
-    navbar
+    //- navbar
     .container.h100
+    h1.logo WAKA
 </template>
 
 <script>
-import navbar from './menu.vue'
+// import navbar from './menu.vue'
 export default {
-  components: { navbar }
+  // components: { navbar }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../scss/components/var';
 @import '../scss/components/mixin';
+
+.top {
+  position: relative;
+}
 .h100 {
   height: 100vh;
   width: 100%;
@@ -23,18 +28,25 @@ export default {
   background-size: cover;
   background-position: center;
   @include desktop_s() {
-    background-image: url('../img/top.jpg');
+    background-image: url('../img/top2.jpg');
     background-position: top;
   }
 }
-h1 {
+.logo {
   color: rgb(231, 231, 231);
-  font-size: 70px;
+  font-size: 90px;
+  height: 90px;
   position: absolute;
-  bottom: 30px;
-  left: 0;
-  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 15%;
   margin: auto;
   font-family: $H_FONT;
+  z-index: 10;
+  color: rgb(218, 216, 216);
+  letter-spacing: 0.5em;
+  @include phone() {
+    display: none;
+  }
 }
 </style>

@@ -28,7 +28,7 @@ img {
   @include desktop_s() {
     // width: calc(100% - #{$MARGIN_VALUE_SIDE_PC} *2);
     // width: 100%;
-    max-width: $MAX_WIDTH_PC;
+    max-width: $MAX_WIDTH_PC * 0.6;
     display: block;
     margin: $MARGIN_VALUE_PC auto;
   }

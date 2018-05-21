@@ -1,6 +1,6 @@
 <template lang='pug'>
     .app
-      //- navbar
+      navbar
       transition(name='fade')
         router-view
 </template>
@@ -12,7 +12,7 @@ import about from './components/about'
 import photos from './components/photos'
 import videos from './components/videos'
 import contact from './components/contact'
-// import navbar from './components/menu'
+import navbar from './components/menu'
 
 export default {
   components: {
@@ -20,13 +20,11 @@ export default {
     about,
     photos,
     videos,
-    contact
-    // navbar
+    contact,
+    navbar
   },
   data() {
-    return {
-      // timeout: null
-    }
+    return {}
   }
   // created() {
   //   window.addEventListener('scroll', this.scroll)
@@ -62,7 +60,7 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 .fade-enter,
 .fade-leave-to {
