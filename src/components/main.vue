@@ -24,13 +24,13 @@ export default {
     contact,
     navbar
   },
+  mounted() {
+    this.$store.state.isMenuOpen = false
+  },
   methods: {
     clickBody() {
       this.$store.state.isMenuOpen = false
     }
-  },
-  mounted() {
-    this.$store.state.isMenuOpen = false
   }
 }
 </script>

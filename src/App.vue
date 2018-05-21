@@ -1,8 +1,8 @@
 <template lang='pug'>
-    .app
-      navbar
-      transition(name='fade')
-        router-view
+  .app
+    navbar
+    transition(name='fade')
+      router-view
 </template>
 
 

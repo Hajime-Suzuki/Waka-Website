@@ -11,17 +11,17 @@
       use(xlink:href='#dots')
     .video-container
       .video
-        iframe(src="https://www.youtube.com/embed/Dwts_sraxeY" frameborder="0" allowfullscreen)
-        h3.caption sus2 East of the Sun (1934) Brooks Bowman
+        iframe(src="https://www.youtube.com/embed/Dwts_sraxeY?rel=0&showinfo=0" frameborder="0" allowfullscreen)
+        h3.caption SUS2 at Utrecht Jazz festival
       .video
-        iframe(src="https://www.youtube.com/embed/MAUGXSVIUNM?rel=0&showinfo=1" frameborder="0" allowfullscreen)
-        h3.caption sus2 East of the Sun (1934) Brooks Bowman
+        iframe(src="https://www.youtube.com/embed/MAUGXSVIUNM?rel=0&showinfo=0" frameborder="0" allowfullscreen)
+        h3.caption SUS2 East of the Sun (1934) Brooks Bowman
       .video
-        iframe(src="https://www.youtube.com/embed/tN2fDgFRdEQ?rel=0&amp;showinfo=1" frameborder="0"  allowfullscreen)
-        h3.caption Crack Anew Sofa - Bossa Nova -
+        iframe(src="https://www.youtube.com/embed/EsDQr2PZjKY?rel=0&showinfo=0" frameborder="0" allowfullscreen)
+        h3.caption Crack Anew Sofa at Tivoli Vredenburg 1
       .video
-        iframe(src="https://www.youtube.com/embed/EsDQr2PZjKY" frameborder="0" allowfullscreen)
-        h3.caption Crack Anew Sofa - Swing -
+        iframe(src="https://www.youtube.com/embed/tN2fDgFRdEQ??rel=0&showinfo=0" frameborder="0"  allowfullscreen)
+        h3.caption Crack Anew Sofa at Tivoli Vredenburg 2
     .indication.indication-bottom
       p -3-
 </template>
