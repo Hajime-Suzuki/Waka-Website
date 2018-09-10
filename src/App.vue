@@ -26,24 +26,6 @@ export default {
   data() {
     return {}
   }
-  // created() {
-  //   window.addEventListener('scroll', this.scroll)
-  // },
-  // destroyed() {
-  //   window.removeEventListener('scroll', this.scroll)
-  // },
-  // methods: {
-  //   scroll() {
-  //     if (this.timeout) return
-  //     this.timeout = setTimeout(() => {
-  //       console.log('testetaes')
-  //       this.timeout = null
-  //     }, 100)
-  //   },
-  //   clickMenu() {
-  //     window.scrollTo(0, window.innerHeight)
-  //   }
-  // }
 }
 </script>
 

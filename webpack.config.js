@@ -28,7 +28,6 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          // extractCSS: true
           loaders: {
             scss: ExtractTextPlugin.extract({
               use: ['css-loader', 'sass-loader'],
@@ -79,12 +78,16 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  plugins: [
+    new ExtractTextPlugin({
+      filename: '[name].css'
+    })
+  ]
 }
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
-  // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
@@ -101,7 +104,6 @@ if (process.env.NODE_ENV === 'production') {
       minimize: true
     }),
     new ExtractTextPlugin({
-      // filename: 'css/[name].css'
       filename: '[name].css'
     })
   ])
