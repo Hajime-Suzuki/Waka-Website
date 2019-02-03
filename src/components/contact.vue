@@ -7,13 +7,13 @@
       use(xlink:href='#dots')
     .bio-line
       p.first-white
-        | With her uniquely captivating voice that is warm and soothing, she enchanted her audience with classics like ‘East Of The Sun’, but also with her unique take on numbers like Nick Drake’s ‘Riverman’, and her own arrangement of all-time Bossa Nova favorite ‘Dindi’, in her performance in Utrecht Jazz festival 2017 at TivoliVredenburg, UT
+        | With her uniquely captivating voice that is organic and warm, she enchanted her audience with Jazz classics like ‘East Of The Sun’, but also with a powerful Samba like Elis Regina’s ‘Menino das Laranjas’, and her own arrangement of all time Bossa Nova favorite ‘Dindi'. She has sung in numerous festivals such as Utrecht Jazz festival, Jazz on the Sofa Festival, Middelheim Jazz festival, North Sea Jazz festival, Sapporo City Jazz Festival, and venues like TivoliVredenburg and JZ Brat SOUND OF TOKYO.
     svg.dots
       use(xlink:href='#dots')
 
     .contact-info
       h1 WAKA
-      p.singer Jazz Singer
+      p.singer a singer, a thinker, a humanitarian
       .icons
         a(href='https://www.facebook.com/WAKASOUND/')
           svg.facebook
@@ -27,11 +27,11 @@
 </template>
 
 <script>
-export default {}
+export default {};
 </script>
 
 <style lang="scss" scoped>
-@import '../scss/components/var';
+@import "../scss/components/var";
 
 p {
   color: $MAINCOLOR_white1;

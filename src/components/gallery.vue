@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import navbar from './menu.vue'
+import navbar from "./menu.vue";
 
-import Masonry from 'masonry-layout'
-import imagesLoaded from 'imagesLoaded'
-import 'basicLightbox/dist/basicLightbox.min.css'
-import * as basicLightbox from 'basiclightbox'
+import Masonry from "masonry-layout";
+import imagesLoaded from "imagesloaded";
+import "basiclightbox/dist/basicLightbox.min.css";
+import * as basicLightbox from "basiclightbox";
 
 export default {
   components: {
@@ -21,46 +21,46 @@ export default {
     return {
       lightBoxInstance: [],
       createHTML: e => {
-        const html = `<img src="${e.target.eventParam.src}">`
-        const instance = basicLightbox.create(html)
-        this.lightBoxInstance.push(instance)
-        instance.show()
+        const html = `<img src="${e.target.eventParam.src}">`;
+        const instance = basicLightbox.create(html);
+        this.lightBoxInstance.push(instance);
+        instance.show();
       }
-    }
+    };
   },
   mounted() {
-    this.$store.state.isMenuOpen = false
-    let grid = document.querySelector('.grid')
+    this.$store.state.isMenuOpen = false;
+    let grid = document.querySelector(".grid");
 
     imagesLoaded(grid, function() {
       let msnry = new Masonry(grid, {
-        itemSelector: '.grid-item',
+        itemSelector: ".grid-item",
         gutter: 10,
         fitWidth: true
-      })
-    })
-    document.querySelectorAll('.grid-item').forEach(item => {
-      item.addEventListener('click', this.createHTML)
-      item.eventParam = item
-    })
+      });
+    });
+    document.querySelectorAll(".grid-item").forEach(item => {
+      item.addEventListener("click", this.createHTML);
+      item.eventParam = item;
+    });
   },
   destroyed() {
-    this.lightBoxInstance.forEach(v => v.close())
-    document.querySelectorAll('.grid-item').forEach(item => {
-      item.removeEventListener('click', this.createHTML)
-    })
+    this.lightBoxInstance.forEach(v => v.close());
+    document.querySelectorAll(".grid-item").forEach(item => {
+      item.removeEventListener("click", this.createHTML);
+    });
   },
   methods: {
     clickBody() {
-      this.$store.state.isMenuOpen = false
+      this.$store.state.isMenuOpen = false;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-@import '../scss/components/var';
-@import '../scss/components/mixin';
+@import "../scss/components/var";
+@import "../scss/components/mixin";
 
 h1 {
   color: $MAINCOLOR_gray3;
