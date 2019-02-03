@@ -2,7 +2,7 @@
 
 ---
 
-### Jazz singer Waka's website. Build with Vue with Pug and SCSS
+### Jazz singer Waka's website. Built with Vue with Pug and SCSS
 
 ---
 
