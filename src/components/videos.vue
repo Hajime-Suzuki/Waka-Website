@@ -11,19 +11,20 @@
       use(xlink:href='#dots')
     .video-container
       .video
-        iframe(src="https://www.youtube.com/watch?v=dWKE4jXrjV8" frameborder="0" allowfullscreen)
+        iframe(src="https://www.youtube.com/embed/dWKE4jXrjV8" frameborder="0" allowfullscreen)
         h3.caption WAKA4TET At JZ brat Sound of Tokyo
       .video
-        iframe(src="https://vimeo.com/277906972" frameborder="0" allowfullscreen)
+        iframe(src="https://player.vimeo.com/video/277906972" frameborder="0" allowfullscreen)
         h3.caption HBB music video 'Ela é Carioca'
       .video
-        iframe(src="https://www.youtube.com/watch?time_continue=3&v=Dwts_sraxeY" frameborder="0" allowfullscreen)
+        iframe(src="https://www.youtube.com/embed/Dwts_sraxeY" frameborder="0" allowfullscreen)
         h3.caption SUS2 at TivoliVredenburg 
       .video
-        iframe(src="https://www.youtube.com/watch?v=8XNNGI-rRi0" frameborder="0"  allowfullscreen)
+        iframe(src="https://www.youtube.com/embed/8XNNGI-rRi0" frameborder="0"  allowfullscreen)
         h3.caption WAKA4TET At Morrow's
     .indication.indication-bottom
       p -3-
+
 </template>
 
 <script>
