@@ -17,7 +17,7 @@
         iframe(src="https://player.vimeo.com/video/277906972" frameborder="0" allowfullscreen)
         h3.caption HBB music video 'Ela é Carioca'
       .video
-        iframe(src="https://www.youtube.com/embed/Dwts_sraxeY" frameborder="0" allowfullscreen)
+        iframe(src="https://www.youtube.com/embed/rybWBjJExzw" frameborder="0" allowfullscreen)
         h3.caption SUS2 at TivoliVredenburg 
       .video
         iframe(src="https://www.youtube.com/embed/8XNNGI-rRi0" frameborder="0"  allowfullscreen)
