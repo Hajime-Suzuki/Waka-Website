@@ -11,7 +11,7 @@
       use(xlink:href='#dots')
     .video-container
       .video
-        iframe(src="https://www.youtube.com/embed/rybWBjJExzw" frameborder="0" allowfullscreen)
+        iframe(src="https://www.youtube.com/embed/dWKE4jXrjV8" frameborder="0" allowfullscreen)
         h3.caption WAKA4TET At JZ brat Sound of Tokyo
       .video
         iframe(src="https://player.vimeo.com/video/277906972" frameborder="0" allowfullscreen)
